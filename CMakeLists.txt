@@ -9,4 +9,6 @@ add_executable(taller main.cpp
         data_structures/Nodo.cpp
         data_structures/Nodo.h
         data_structures/Lista.cpp
-        data_structures/Lista.h)
+        data_structures/Lista.h
+        core/lectura.cpp
+        core/lectura.h)
