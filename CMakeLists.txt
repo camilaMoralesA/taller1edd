@@ -4,5 +4,9 @@ project(taller)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(taller main.cpp
-        clases/Cancion.cpp
-        clases/Cancion.h)
+        classes/Cancion.cpp
+        classes/Cancion.h
+        data_structures/Nodo.cpp
+        data_structures/Nodo.h
+        data_structures/Lista.cpp
+        data_structures/Lista.h)
