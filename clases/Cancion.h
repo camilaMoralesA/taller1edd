@@ -14,7 +14,8 @@ class Cancion {
     string nombre ;
     string autor;
     string album;
-
+    int año;
+    double duracion;
 
 
 };
