@@ -7,9 +7,18 @@
 
 
 
-class Nodo {
+template <typename T>
+struct Nodo {
+    T dato;
+    Nodo<T> *sig;
+    Nodo<T>*ant;
+    Nodo(T dato) {
+        this->dato = dato;
+        this->ant = NULL;
+        this->sig = NULL;
 
-};
+    }
+}
 
 
 
