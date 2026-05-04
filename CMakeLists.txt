@@ -3,4 +3,6 @@ project(taller)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(taller main.cpp)
+add_executable(taller main.cpp
+        clases/Cancion.cpp
+        clases/Cancion.h)
