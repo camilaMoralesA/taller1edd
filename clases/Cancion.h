@@ -16,6 +16,20 @@ class Cancion {
     string album;
     int año;
     double duracion;
+    string direccion;
+    public:
+    Cancion(int id, string nombre, string autor, string album, int año, double duracion, string direccion) {
+        this->id = id;
+        this->nombre = nombre;
+        this->autor = autor;
+        this->album = album;
+        this -> duracion = duracion;
+        this->direccion = direccion;
+        this->año = año;
+
+    }
+    };
+
 
 
 };
