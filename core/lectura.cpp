@@ -12,5 +12,9 @@ void lectura() {
     ifstream file("x.txt");
     while (getline(file,linea)) {
         stringstream ss(linea);
+        string[] partes;
+        partes = ss.str();
+
+        
     }
 }

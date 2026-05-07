@@ -11,4 +11,6 @@ add_executable(taller main.cpp
         data_structures/Lista.cpp
         data_structures/Lista.h
         core/lectura.cpp
-        core/lectura.h)
+        core/lectura.h
+        classes/reproductor.cpp
+        classes/reproductor.h)
