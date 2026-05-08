@@ -7,14 +7,19 @@
 #include <iostream>
 
 using namespace std;
-void lectura() {
+void lectura::leer(Lista<Cancion>& lista) {
     string linea;
     ifstream file("x.txt");
     while (getline(file,linea)) {
         stringstream ss(linea);
-        string[] partes;
-        partes = ss.str();
-
-        
+        string partes[8];
+        string campo;
+        int i = 0;
+        while (getline(ss,campo,"{;")) {
+            partes[i] = campo;
+        }
+        cancion c(partes[0],partes[1],partes[2],partes[3],partes[4],partes[5],partes[6],partes[7]);
     }
-}
+};
+
+

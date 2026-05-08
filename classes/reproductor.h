@@ -14,6 +14,10 @@ private:
         Nodo<Cancion> *nodo;
     public:
     reproductor();
+    void iniciar();
+    void cargar();
+
+
 
 
 
