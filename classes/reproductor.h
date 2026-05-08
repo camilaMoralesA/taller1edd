@@ -12,7 +12,11 @@ class reproductor {
 private:
     Lista<Cancion> canciones;
     Lista<Cancion> playlist;
-    Nodo<Cancion> *nodo;
+    Nodo<Cancion> * nodoActual;
+    bool reproducir;
+    //modo aleatorio
+
+    bool aleatorio;
 
     public:
     reproductor();
