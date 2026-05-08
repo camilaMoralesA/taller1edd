@@ -5,7 +5,7 @@
 #ifndef TALLER_CANCION_H
 #define TALLER_CANCION_H
 #include <string>
-
+using namespace std;
 
 //id_interno,nombre_cancion,nombre_artista,nombre_album,año,duración_en_segundos,ubicacion_archivo
 
@@ -28,11 +28,8 @@ class Cancion {
         this->año = año;
 
     }
-    };
-
-
-
 };
+
 
 
 

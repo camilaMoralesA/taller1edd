@@ -16,8 +16,8 @@ private:
     Nodo<T> *cola;
 public:
     Lista() {
-        this->head = NULL;
-        this->cola = NULL;
+        this->head = nullptr;
+        this->cola = nullptr;
     }
     Nodo<T> *getCola() {
         return this->cola;
@@ -26,18 +26,26 @@ public:
         return this->head;
     }
     void ver() {
-        nodo<T> *aux = head;
-        while (aux != NULL) {
-            cout << aux->dato << " ";
+        Nodo<T> *aux = head;
+        while (aux != nullptr) {
+            std::cout << aux->dato << " ";
             aux = aux->sig;
         }
 
     }
     void agregar(T dato) {
-        Nodo<T> *aux = new Nodo<T>();
-        cola->sig = aux;
-        aux->ant = cola;
-        cola = aux;
+
+        Nodo<T>* aux = new Nodo<T>(dato);
+
+        if (head == nullptr) {
+            head = aux;
+            cola = aux;
+        }
+        else {
+            cola->sig = aux;
+            aux->ant = cola;
+            cola = aux;
+        }
     }
     
 };

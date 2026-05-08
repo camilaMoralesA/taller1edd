@@ -3,7 +3,6 @@
 //
 
 #include "reproductor.h"
-#include <iostream>;
 
 #include "../core/lectura.h"
 using namespace std;
