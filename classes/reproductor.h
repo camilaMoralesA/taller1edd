@@ -11,16 +11,21 @@
 class reproductor {
 private:
     Lista<Cancion> canciones;
-        Nodo<Cancion> *nodo;
+    Lista<Cancion> playlist;
+    Nodo<Cancion> *nodo;
+
     public:
     reproductor();
     void iniciar();
     void cargar();
-
-
-
-
-
+    void menu();
+    void lista();
+    void  pausar();
+    void  anterior();
+    void  siguiente();
+    void  activar();
+    void  repetir();
+    void  listaReproduciones();
 };
 
 
