@@ -149,7 +149,18 @@ void reproductor::menu() {
             case 'V':
                 return;
             case 'N':
-                canciones.agregar("");
+                cout<<"nombre":
+                string nombre;
+                getline(cin, nombre);
+                cout<<"autor":
+                string autor;
+                cin>>autor;
+                cout<<"album":
+                string album;
+                cin>>nombre;
+                cout<<"nombre":
+                string nombre;
+                cin>>nombre;
                 break;
         }
         if (letra == 'R' || letra == 'A' || letra == 'D') {

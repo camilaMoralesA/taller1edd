@@ -10,7 +10,7 @@
 using namespace std;
 void lectura::leer(Lista<Cancion>& lista) {
     string linea;
-    ifstream file("x.txt");
+    ifstream file("music_source.txt");
     while (getline(file,linea)) {
         stringstream ss(linea);
         string partes[7];
