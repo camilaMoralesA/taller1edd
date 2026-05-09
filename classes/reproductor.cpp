@@ -149,18 +149,32 @@ void reproductor::menu() {
             case 'V':
                 return;
             case 'N':
-                cout<<"nombre":
+                //id_interno,nombre_cancion,nombre_artista,nombre_album,año,duración_en_segundos,ubicacion_archivo
+                cout<<"Id";
+                int id;
+                cin>>id;
+                cout<<"nombre";
                 string nombre;
                 getline(cin, nombre);
-                cout<<"autor":
+                cout<<"autor";
                 string autor;
-                cin>>autor;
-                cout<<"album":
+                getline(cin, autor);
+                cout<<"album";
+                cout<<"albun";
+
                 string album;
-                cin>>nombre;
-                cout<<"nombre":
-                string nombre;
-                cin>>nombre;
+                getline(cin, autor);
+                int año;
+                getline(cin, autor);
+                cout<<"tiempo";
+                double tiempo;
+                cin>>tiempo;
+                cout<<"direccion";
+                string direccion;
+                getline(cin, direccion);
+                Cancion ca;
+             //   ca(id,nombre);
+
                 break;
         }
         if (letra == 'R' || letra == 'A' || letra == 'D') {
