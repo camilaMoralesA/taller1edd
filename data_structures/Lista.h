@@ -25,6 +25,7 @@ public:
     Nodo<T> *getHead() {
         return this->head;
     }
+
     void ver() {
         Nodo<T> *aux = head;
         while (aux != nullptr) {
@@ -80,6 +81,19 @@ public:
         }
         delete aux;
     }
+    Nodo<T>* buscar(int n) {
+        Nodo<T>* aux = head;
+        int i =1;
+        while (aux != nullptr) {
+            if (i==n) {
+                return aux;
+            }
+            aux = aux->sig;
+            i++;
+        }
+        return nullptr;
+    }
+    
 };
 
 

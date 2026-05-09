@@ -111,8 +111,34 @@ V – Volver al menú principal
 
         }
     }
+void reproductor::agregarNueva(int n) {
+    Nodo<Cancion>* aux = canciones.getHead();
+    int i = 1;
+    while (aux != nullptr) {
+        if (i == n) {
+            playlist.agregar(aux->dato);
+            cout<<"Cancion agregada"<<endl;
+            return;
+        }
+        aux = aux->sig;
+        i++;
+    }
 
+}
+void reproductor::reproducirCanciones(int n) {
+    Nodo<Cancion>* aux = canciones.getHead();
+    int i =1;
+    while (aux != nullptr) {
+        if (i == n) {
+            nodoActual = aux;
+            reproducir = true;
+            cout<<"reproduciento: " + dato.nombre<<endl;
+            return;
 
+        }
+    }
+
+}
 
     void reproductor::alea() {
         aleatorio = !aleatorio;
