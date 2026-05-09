@@ -17,7 +17,7 @@ private:
     //modo aleatorio
 
     bool aleatorio;
-
+    int modo;
     public:
     reproductor();
     void iniciar();
