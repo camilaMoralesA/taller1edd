@@ -31,6 +31,7 @@ public:
             std::cout << aux->dato << " ";
             aux = aux->sig;
         }
+        std::cout << std::endl;
 
     }
     void agregar(T dato) {
@@ -47,8 +48,40 @@ public:
             cola = aux;
         }
     }
-    
+    void eliminar(int n) {
+        if (head == nullptr) {
+            return;
+        }
+        Nodo<T>* aux = head;
+        int i =1;
+        while (aux != nullptr && i <n) {
+            aux = aux->sig;
+            i++;
+        }
+        if (aux == nullptr) {
+            return;
+        }if (aux == head && aux == cola) {
+            head = nullptr;
+            cola = nullptr;
+        }else if (aux == head){
+            head = head->sig;
+            if (head != nullptr) {
+                head->ant = nullptr;
+            }
+
+        }else if (aux == cola) {
+            cola = cola->ant;
+            if (cola != nullptr) {
+                cola->ant = nullptr;
+            }
+        }else {
+            aux->ant->sig = aux->sig;
+            aux->sig->ant = aux->ant;
+        }
+        delete aux;
+    }
 };
+
 
 
 
