@@ -47,16 +47,25 @@ void reproductor::menu() {
 }
 void reproductor::pausar(){
 reproducir = !reproducir;
+    if (reproducir) {
+        cout<<"Reproduciendo\m";
+    }else {
+        cout<<"pausado\n";
+    }
 
 }
 void reproductor::anterior() {
     if (nodoActual && nodoActual->ant) {
         nodoActual = nodoActual->ant;
+        cout <<"actual: ";
+        cout<<nodoActual->dato.nombre;
     }
 }
 void reproductor::siguiente() {
     if (nodoActual && nodoActual->sig) {
         nodoActual = nodoActual->sig;
+        cout <<"actual: ";
+        cout<<nodoActual->dato.nombre;
     }
 }
 void reproductor::lista() {
@@ -136,8 +145,21 @@ void reproductor::reproducirCanciones(int n) {
             return;
 
         }
+        aux = aux->sig;
+        i++;
     }
 
+}
+    void reproductor::listaReproduciones() {
+    Nodo<Cancion>* aux = canciones.getHead();
+    cout<<"Playlist\n";
+    int i = 1;
+    while (aux != nullptr) {
+        cout<<aux->dato.nombre<<endl;
+        cout<<aux->dato.autor<<endl;
+        aux = aux->sig;
+        i++;
+    }
 }
 
     void reproductor::alea() {
