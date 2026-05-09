@@ -21,7 +21,7 @@ void reproductor::iniciar() {
     }
 
 void reproductor::cargar() {
-    lectura();
+    lectura(canciones);
 }
 void reproductor::menu() {
     char opcion;
@@ -48,7 +48,7 @@ void reproductor::menu() {
 void reproductor::pausar(){
 reproducir = !reproducir;
     if (reproducir) {
-        cout<<"Reproduciendo\m";
+        cout<<"Reproduciendo\n";
     }else {
         cout<<"pausado\n";
     }
@@ -101,7 +101,7 @@ V – Volver al menú principal
         case 'V':
             return;
         case 'N':
-            agregarNueva();
+            agregarNueva(n);
             break;
     }
     if (letra == 'R' || letra == 'A' || letra == 'D') {
@@ -111,7 +111,7 @@ V – Volver al menú principal
                 reproducirCanciones(n);
                 break;
             case 'A':
-                playlist.agregar(n);
+                agregarNueva(n);
                 break;
             case 'D':
                 playlist.eliminar(n);
@@ -141,7 +141,7 @@ void reproductor::reproducirCanciones(int n) {
         if (i == n) {
             nodoActual = aux;
             reproducir = true;
-            cout<<"reproduciento: " + dato.nombre<<endl;
+            cout<<"reproduciento: " + nodoActual->dato.nombre<<endl;
             return;
 
         }
@@ -151,7 +151,7 @@ void reproductor::reproducirCanciones(int n) {
 
 }
     void reproductor::listaReproduciones() {
-    Nodo<Cancion>* aux = canciones.getHead();
+    Nodo<Cancion>* aux = playlist.getHead();
     cout<<"Playlist\n";
     int i = 1;
     while (aux != nullptr) {

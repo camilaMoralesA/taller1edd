@@ -31,8 +31,11 @@ private:
     void  repetir();
     void  listaReproduciones();
     void alea();
-    void reproducirCancion(int n);
+    void reproducirCanciones(int n);
     void agregarCancion(int n);
+    void reproducirPlaylist(int n);
+    void listaPlaylist();
+    void agregarNueva(int n);
 };
 
 
