@@ -29,31 +29,34 @@ void reproductor::menu() {
         cout<<"Opciones \n  W – Reproducir/Pausar \n Q – Pista Anterior \n E – Pista Siguiente";
         cout<<"S – Activar/Desactivar modo aleatorio \n  R – Repetición (Desactivado/Repetir una/Repetir todas)  \n A – Ver lista de reproducción actual \n L – Listado de canciones";
         cout<<"X – Salir \n Ingrese Opción: \n";
+        cin >> opcion;
+
         switch (opcion) {
-            case "W": pausar(); break;
-            case "Q": anterior(); break;
-            case "E": siguiente(); break;
-            case "S": activar(); break;
-            case "R": repetir(); break;
-            case "A": listaReproduciones(); break;
-            case "L": lista(); break;
+            case 'W':
+                pausar(); break;
+            case 'Q': anterior(); break;
+            case 'E': siguiente(); break;
+            case 'S': activar(); break;
+            case 'R': repetir(); break;
+            case 'A': listaReproduciones(); break;
+            case 'L': lista(); break;
             default: cout<<"Opcion no valida";
         }
-    }while(opcion!="X");
+    }while(opcion != 'X');
 
 }
-void pausar() {
-    reproducir = !reproducir;
+void reproductor::pausar(){
+reproducir = !reproducir;
 
 }
-void anterior() {
-    if (nodoActual && nodoActual->anterior) {
-        nodoActual = nodoActual->anterior;
+void reproductor::anterior() {
+    if (nodoActual && nodoActual->ant) {
+        nodoActual = nodoActual->ant;
     }
 }
-void siguiente() {
-    if (nodoActual && nodoActual->siguiente) {
-        nodoActual = nodoActual->siguiente;
+void reproductor::siguiente() {
+    if (nodoActual && nodoActual->sig) {
+        nodoActual = nodoActual->sig;
     }
 }
 void reproductor::lista() {
@@ -70,22 +73,47 @@ V – Volver al menú principal
     cout<<nodoActual->dato.nombre<<endl;
     cout<<"Listado de canciones";
 
-    Nodo<Cancion> * aux;
+    Nodo<Cancion>* aux = canciones.getHead();
     while (aux!= nullptr) {
         cout<<aux->dato.nombre;
         cout<<aux->dato.autor;
 
-        aux = aux->siguiente;
+        aux = aux->sig;
     }
-    cout<<"Reproducir canción seleccionada";
+    string opcion;
+    cout<<"R<num> - Reproducir canción seleccionada";
     cout<<"A<num> - Agregar canción seleccionada al final de la lista de reproducción actual";
     cout<<"N – Agregar canción al registro de canciones";
     cout<<"D<num> – Eliminar canción seleccionada";
     cout<<"V – Volver al menú principal";
-}
+    cin>>opcion;
+    char letra = toupper(opcion[0]);
+    switch (letra) {
+        case 'V':
+            return;
+        case 'N':
+            agregarNueva();
+            break;
+    }
+    if (letra == 'R' || letra == 'A' || letra == 'D') {
+    int n = stoi(opcion.substr(1));
+        switch (letra) {
+            case 'R':
+                reproducirCanciones(n);
+                break;
+            case 'A':
+                playlist.agregar(n);
+                break;
+            case 'D':
+                playlist.eliminar(n);
+                break;
+        }
+
+        }
+    }
 
 
-}
-    void aleatorio() {
+
+    void reproductor::alea() {
         aleatorio = !aleatorio;
     }

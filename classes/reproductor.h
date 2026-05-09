@@ -30,6 +30,7 @@ private:
     void  activar();
     void  repetir();
     void  listaReproduciones();
+    void alea();
 };
 
 
